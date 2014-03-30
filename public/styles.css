@@ -1,0 +1,68 @@
+body {
+  background-color: #121212;
+  color: #E0E0E0;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: #FF7B24;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#demo {
+  height: 315px;
+}
+
+#demo div,
+#demo img {
+  float: left;
+}
+
+#demo .vertical {
+  margin-right: 5px;
+  width: 460px;
+}
+
+#demo .vertical img {
+  margin-bottom: 5px;
+}
+
+#demo .horizontal {
+  width: 495px;
+}
+
+#demo .horizontal img {
+  margin-right: 5px;
+}
+
+.usage {
+  clear: both;
+  margin-top: 20px;
+}
+
+.usage pre {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #333;
+}
+
+.footer {
+  font-size: 14px;
+  margin-top: 30px;
+}

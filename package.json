@@ -1,0 +1,19 @@
+{
+  "name": "placeschwarz",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gm": "^1.14.2",
+    "figgs": "^0.1.2",
+    "mongoose": "^3.8.8",
+    "hapi": "^3.1.0",
+    "async": "^0.4.0",
+    "joi": "^2.9.0"
+  }
+}

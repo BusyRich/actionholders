@@ -1,0 +1,12 @@
+{
+  "development": {
+    "port": "<var.PORT 9654>",
+    "mongodb":"mongodb://localhost/placeholders",
+     "from":"./originals/",
+     "to":"./output/"
+  },
+  "staging": {},
+  "production": {
+
+  }
+}
