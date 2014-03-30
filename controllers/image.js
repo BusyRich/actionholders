@@ -24,7 +24,7 @@ var imageSchema = mongoose.Schema({
     model = mongoose.model('Image', imageSchema);
 
 image.create =  function(original, width, height, callback) {
-  var img = process.config.to + original + '-' + width + 'x' + height + '.jpg';
+  var img = process.config.to + '/' + original + '-' + width + 'x' + height + '.jpg';
   console.log('Creating image %s', img);
 
   magick(process.config.from + originals[original])

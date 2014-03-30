@@ -3,10 +3,10 @@
     "port": "<var.PORT 9654>",
     "mongodb":"mongodb://localhost/placeholders",
      "from":"./originals/",
-     "to":"./output/"
+     "to": "<var.CLOUD_DIR ./output>"
   },
   "staging": {},
   "production": {
-
+    "mongodb":"production mongo connection"
   }
 }
