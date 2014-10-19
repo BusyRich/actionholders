@@ -1,15 +1,21 @@
 var async = require('async'),
     mongoose = require('mongoose'),
     magick = require('gm').subClass({imageMagick:true}),
-    originals = {
-      length: 4, // helper for random choices
-      'a1': 'arnold-1.jpg',
-      'a2': 'arnold-2.jpg',
-      'a3': 'arnold-3.jpg',
-      'a4': 'arnold-4.jpg'
-    };
+    originals = require('../images'),
+    imageCount = 0;
 
-module.exports = image = {};
+Object.keys(originals).forEach(function(key) {
+  var img = originals[key];
+
+  img.preview = Math.round(img.width * img.thumbnailSize) +
+    '/' + Math.round(img.height * img.thumbnailSize);
+
+  imageCount++;
+});
+
+module.exports = image = {
+  originals: originals
+};
 
 // connect to the db
 mongoose.connect(process.config.mongodb);
@@ -27,7 +33,7 @@ image.create =  function(original, width, height, callback) {
   var img = process.config.to + '/' + original + '-' + width + 'x' + height + '.jpg';
   console.log('Creating image %s', img);
 
-  magick(process.config.from + originals[original])
+  magick(process.config.from + originals[original].file)
     .resize(width, height, '^')
     .gravity('center')
     .crop(width, height, 0, 0)
@@ -47,7 +53,7 @@ image.create =  function(original, width, height, callback) {
 
 // picks a random image to use
 image.rand = function() {
-  var r = Math.floor(Math.random() * originals.length) + 1,
+  var r = Math.floor(Math.random() * imageCount) + 1,
       i = 0;
 
   for(var o in originals) {

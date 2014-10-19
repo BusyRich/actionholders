@@ -5,7 +5,7 @@ module.exports = function(server) {
 
   // simple request helper for image routes
   var replyImage = function(request, reply) {
-    var code = request.params.code,
+    var code = request.query.image,
         width = request.params.width,
         height = request.params.height;
 
@@ -45,14 +45,25 @@ module.exports = function(server) {
     }
   });
 
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: function(request, reply) {
+      reply.view('index', {images:image.originals});
+    }
+  });
+
   // square image
   server.route({
     method: 'GET',
     path: '/i/{size}',
     config: {
       validate: {
-        path: {
+        params: {
           size: validation.size
+        },
+        query: {
+          image: Joi.string()
         }
       }
     },
@@ -65,25 +76,12 @@ module.exports = function(server) {
     path: '/i/{width}/{height}',
     config: {
       validate: {
-        path: {
+        params: {
           width: validation.size,
           height: validation.size
-        }
-      }
-    },
-    handler: replyImage
-  });
-
-  // specific image with custom width/height
-  server.route({
-    method: 'GET',
-    path: '/i/{code}/{width}/{height}',
-    config: {
-      validate: {
-        path: {
-          width: validation.size,
-          height: validation.size,
-          code: Joi.string()
+        },
+        query: {
+          image: Joi.string()
         }
       }
     },

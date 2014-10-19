@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Place 90s</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Use this service to shoot, explode, or otherwise place some action into your projects.">
+    <meta property="og:image" content="http://place90s.com/logo.png"/>
+    <link rel="icon" type="image/png" href="/favicon.ico"/>
+    <link href="/styles.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div id="headerBanner"></div>
+    <section class="header">
+      <img src="/logo.png" alt="Place 90s Logo"/>
+    </section>
+    <section id="demo" class="section">
+      <div class="vertical">
+        <img src="/i/100/100?image=s1"/>
+        <img src="/i/230/100?image=r3"/>
+        <img src="/i/210/210?image=v1"/>
+        <img src="/i/120/210?image=b3"/>
+      </div>
+      <div class="horizontal">
+        <img src="/i/145/315?image=a1"/>
+      </div>
+      <div class="intro">
+        <p>Sometimes your development mockups need a little action. Use this service to shoot, explode,
+          or otherwise "place" some action into your projects.</p>
+        <pre><code>http://place90s.com/i/250</code></pre>
+        <p class="comment">Get a 250x250 image</p>
+        <pre><code>http://place90s.com/i/250/100</code></pre>
+        <p class="comment">Get a 250x100 image</p>
+      </div>
+    </section>
+    <h2>Usage</h2>
+    <div class="usage">
+      <pre><code>http://actionholder.com/i/250</code></pre>
+      <p>Gets a square image with a width and height of 250 pixels</p>
+      <pre><code>http://actionholder.com/i/150/75</code></pre>
+      <p>Gets an image with a width of 150 pixels and a height of 75 pixels</p>
+      <pre><code>http://actionholder.com/i/250?image=a1<br/>http://actionholder.com/i/a1/150/75?image=s2</code></pre>
+      <p>Both URLs support an <code>image</code> query parameter
+        <br/>This allows you to specify which image to get
+        <br/>The images available, along with their image codes, are listed below</p>
+    </div>
+    <h2>Images</h2>
+    <table id="images" class="section">
+      <tr>
+        <th>Preview</th>
+        <th>Code</th>
+        <th>Original Size</th>
+        <th>Orientation</th>
+        <th>Movie</th>
+      </tr>
+      {{#each images}}
+        <tr>
+          <td><img src="/i/{{preview}}?image={{@key}}" alt="Image {{@key}}"/></td>
+          <td>{{@key}}</td>
+          <td>{{width}} x {{height}}</td>
+          <td>{{type}}</td>
+          <td>{{movie}}</td>
+        </tr>
+      {{/each}}
+    </table>
+    <div class="footer">
+      Created by <a href="https://github.com/busyrich" target="_blank">Richard Key</a>. Inspired by <a href="http://placehold.it/" target="_blank">placehold.it</a>, <a href="http://placekitten.com/" target="_blank">placekitten.com</a>, and <a href="http://placechris.com/" target="_blank">placechris.com</a>.
+    </div>
+  </body>
+</html>

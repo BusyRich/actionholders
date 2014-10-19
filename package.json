@@ -1,7 +1,7 @@
 {
   "name": "placeschwarz",
   "mod-project-name": "Action Holders",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "site.js",
   "scripts": {
@@ -10,11 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gm": "^1.14.2",
-    "figgs": "^0.1.2",
-    "mongoose": "^3.8.8",
-    "hapi": "^3.1.0",
     "async": "^0.4.0",
-    "joi": "^2.9.0"
+    "figgs": "^0.1.2",
+    "gm": "^1.14.2",
+    "handlebars": "^2.0.0",
+    "hapi": "^7.0.0",
+    "joi": "^4.7.0",
+    "mongoose": "^3.8.8"
   }
 }

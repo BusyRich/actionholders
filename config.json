@@ -7,6 +7,6 @@
   },
   "staging": {},
   "production": {
-    "mongodb":"production mongo connection"
+    "mongodb":"mongodb://admin:90sadm1n@novus.modulusmongo.net:27017/egyGah4o"
   }
 }

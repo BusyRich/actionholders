@@ -1,7 +1,15 @@
 process.config = require('figgs').load();
 
-var Hapi = require('hapi'),
+var path = require('path'),
+    Hapi = require('hapi'),
     server = Hapi.createServer(process.config.port);
+
+server.views({
+  engines: {
+    hbs: require('handlebars')
+  },
+  path: path.join(__dirname, 'views')
+});
 
 require('./routes')(server);
 
